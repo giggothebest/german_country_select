@@ -1,1 +1,1 @@
-require 'german_country_select'
+require 'country_select'
