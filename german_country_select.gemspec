@@ -1,22 +1,24 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'german_country_select/version'
+$:.push File.expand_path("../lib", __FILE__)
+require "german_country_select/version"
 
-Gem::Specification.new do |g|
-  g.name          = "german_country_select"
-  g.version       = GermanCountrySelect::VERSION
-  g.authors       = ["Christian Brunner"]
-  g.email         = ["christian.brunner@sti-consulting.de"]
-  g.description   = %q{german CountrySelect}
-  g.summary       = %q{german CountrySelect}
-  g.homepage      = ""
+Gem::Specification.new do |s|
+  s.name = "german_country_select"
+  s.version = CountrySelect::VERSION
+  s.authors = ["Christian Brunner"]
+  s.email = ["christian.brunner@sti-consulting.de"]
+  s.homepage = ""
+  s.summary = %q{german Country Select Plugin}
+  s.description = %q{Provides a simple helper to get an HTML select list of countriesin german. The list of countries comes from the ISO 3166 standard. While it is a relatively neutral source of country names, it will still offend some users.}
 
-  #g.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  g.files         = `git ls-files`.split($/)
-  g.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  g.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  # g.executables   = g.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  # g.test_files    = g.files.grep(%r{^(test|spec|features)/})
-  g.require_paths = ["lib"]
+  s.rubyforge_project = "german_country_select"
+
+  s.files = `git ls-files`.split("\n")
+  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
+
+  # specify any dependencies here; for example:
+  # s.add_development_dependency "rspec"
+  # s.add_runtime_dependency "rest-client"
 end

@@ -1,5 +1,5 @@
 .gem
-pkg/
+pkg/*
 Gemfile.lock
 .rbc
 .bundle
